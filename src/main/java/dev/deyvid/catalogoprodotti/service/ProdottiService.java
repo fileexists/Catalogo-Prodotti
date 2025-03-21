@@ -28,8 +28,8 @@ public class ProdottiService {
 		return prodottoRepository.findById(id).orElse(null);
 	}
 	
-    public void save(Prodotto prodotto) {
-        prodottoRepository.save(prodotto);
+    public Prodotto save(Prodotto prodotto) {
+        return prodottoRepository.save(prodotto);
     }
 	
 	public Prodotto creaProdotto(String nome, Float prezzo) {
@@ -61,6 +61,10 @@ public class ProdottiService {
 	public List<Prodotto> getByNomeContainingAndPrezzo(String nome, Float prezzo) {
 		return prodottoRepository.getByNomeContainingAndPrezzoBetween(nome, prezzo - 0.01f, prezzo + 0.01f);
 	}
+	
+	public void deleteByPriceBetween(Float min, Float max) {
+		prodottoRepository.deleteByPrezzoBetween(min -0.1f, max + 0.01f);
+	}
 
 	public List<Prodotto> findByNomeAndPrezzo(String nome, Float prezzo) {
 		if (nome != null && !nome.isEmpty() && prezzo != null) {
@@ -80,5 +84,27 @@ public class ProdottiService {
         }
 		return null;
     }
+    
+	public Prodotto aggiornamentoCompleto(Prodotto prodotto) {
+		Prodotto prodottoDatabase = getById(prodotto.getId());
+		if(prodottoDatabase != null) {
+			prodottoDatabase.setNome(prodotto.getNome());
+			prodottoDatabase.setPrezzo(prodotto.getPrezzo());
+		}
+		return prodottoDatabase;
+	}
+	
+	public Prodotto aggiornamentoParziale(Prodotto prodotto) {
+		Prodotto prodottoDatabase = getById(prodotto.getId());
+		if(prodottoDatabase != null) {
+			if(prodotto.getNome() != null && !prodotto.getNome().isEmpty()) {
+				prodottoDatabase.setNome(prodotto.getNome());
+			}
+			if(prodotto.getPrezzo() != null) {
+				prodottoDatabase.setPrezzo(prodotto.getPrezzo());
+			}
+		}
+		return prodottoDatabase;
+	}
 
 }

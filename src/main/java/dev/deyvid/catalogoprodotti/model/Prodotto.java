@@ -1,5 +1,6 @@
 package dev.deyvid.catalogoprodotti.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +17,11 @@ public class Prodotto {
 	@Id
 	@GeneratedValue ( strategy=GenerationType.IDENTITY )
 	private Integer id;
+	
+	@JsonProperty(access = JsonProperty.Access.AUTO)
 	private String nome;
+	
+	@JsonProperty(access = JsonProperty.Access.AUTO)
 	private Float prezzo;
 	
 	public Prodotto() {

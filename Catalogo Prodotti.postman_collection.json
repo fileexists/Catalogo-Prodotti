@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "69e76f1c-f7eb-4869-9d1d-9dd00bf54b03",
+		"name": "Catalogo Prodotti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24412515"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/prodotti/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/prodotti/getById/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"getById",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByNome [Like]",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/prodotti/getByNome/e",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"getByNome",
+						"e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByPrezzoMinoreDi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/prodotti/getByPrezzoMinoreDi/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"getByPrezzoMinoreDi",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByNomeAndPrezzo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/prodotti/getByNomeAndPrezzo/e/8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"getByNomeAndPrezzo",
+						"e",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Prodotto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "admin_pass",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Latte\",\r\n    \"prezzo\": 4.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/prodotti/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Total Update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "admin_pass",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"Miele\"\r\n    //\"prezzo\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/prodotti/totalUpdate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"totalUpdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partial Update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "admin_pass",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 8,\r\n    \"nome\": \"Patate\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/prodotti/partialUpdate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"partialUpdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "admin_pass",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/prodotti/deleteById/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"deleteById",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by Prezzo between",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "user",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "ciao",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "admin_pass",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/prodotti/deleteByPrezzoBetween/0.7/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"prodotti",
+						"deleteByPrezzoBetween",
+						"0.7",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
