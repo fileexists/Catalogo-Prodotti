@@ -89,7 +89,9 @@ public class ProdottiService {
 		Prodotto prodottoDatabase = getById(prodotto.getId());
 		if(prodottoDatabase != null) {
 			prodottoDatabase.setNome(prodotto.getNome());
-			prodottoDatabase.setPrezzo(prodotto.getPrezzo());
+			if(prodotto.getPrezzo() == null || prodotto.getPrezzo() > 0) {
+				prodottoDatabase.setPrezzo(prodotto.getPrezzo());
+			}
 		}
 		return prodottoDatabase;
 	}
@@ -100,7 +102,7 @@ public class ProdottiService {
 			if(prodotto.getNome() != null && !prodotto.getNome().isEmpty()) {
 				prodottoDatabase.setNome(prodotto.getNome());
 			}
-			if(prodotto.getPrezzo() != null) {
+			if(prodotto.getPrezzo() != null && prodotto.getPrezzo() > 0) {
 				prodottoDatabase.setPrezzo(prodotto.getPrezzo());
 			}
 		}
