@@ -80,7 +80,7 @@ public class ProdottiService {
 	
     public List<Prodotto> findByNomeAndPrezzoLessThan(String nome, Float prezzo) {
         if (nome != null && !nome.isEmpty() && prezzo != null) {
-            return prodottoRepository.getByNomeContainingAndPrezzoLessThan(nome, prezzo);
+            return prodottoRepository.getByNomeContainingAndPrezzoLessThan(nome, prezzo + 0.01f);
         }
 		return null;
     }
